@@ -9,6 +9,7 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 })
 export class HomeComponent implements OnInit {
   searchUsername;
+  public userSearched;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -23,6 +24,8 @@ export class HomeComponent implements OnInit {
 
   onSubmit() {
     this.repositoriesService.getRepositories(this.searchUsername.value.username);
+
+    this.userSearched = this.searchUsername.value.username;
   }
 
 }
