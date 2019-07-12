@@ -1,6 +1,11 @@
+@import '../../../assets/sass/main.scss';
+
 footer {
+  position: absolute;
+  width: 100%;
+  height: 60px;
+  min-height: 8vh;
   padding: 15px;
   color: #808080;
-  background-color: #fff;
-  height: 10vh;
+  background-color: $white;
 }

@@ -1,13 +1,24 @@
 @import '../../../assets/sass/main.scss';
  
-nav {
+header {
   min-height: 10vh;
-  padding: 15px;  
   background-color: $white;
 
   .navbar-brand {
+    width: 60%;
+
     img {
       width: 10%;
+
+      @media screen and (max-width: 990px) {
+        width: 30%;
+      }
+    }
+  }
+
+  .collapse {
+    .link-navbar {
+      padding: 10px;
     }
   }
 }
