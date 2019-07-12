@@ -7,6 +7,10 @@ header {
   .navbar-brand {
     width: 10%;
 
+    @media screen and (max-width: 990px) {
+      width: 60%;
+    }
+
     img {
       width: 70%;
 

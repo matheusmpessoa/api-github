@@ -1,5 +1,11 @@
 @import '../../../assets/sass/main.scss';
 
+.searchBox {
+  @media screen and (max-width: 990px) {
+    margin: 50px;
+  }
+}
+
 .list-group {
   width: 100%;
 
