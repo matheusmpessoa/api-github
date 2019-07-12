@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { RepositoriesService } from './../../services/repositories/repositories.service';
+import { FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
@@ -6,10 +8,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  searchUsername;
 
-  constructor() { }
+  constructor(
+    private formBuilder: FormBuilder,
+    public repositoriesService: RepositoriesService,
+  ) { }
 
   ngOnInit() {
+    this.searchUsername = this.formBuilder.group({
+      username: [''],
+    })
+  }
+
+  onSubmit() {
+    this.repositoriesService.getRepositories(this.searchUsername.value.username);
   }
 
 }

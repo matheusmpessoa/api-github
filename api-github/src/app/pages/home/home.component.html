@@ -3,11 +3,12 @@
     <div class="col-md-5 p-lg-5 mx-auto">
       <h2>API Github</h2>
       <p>Digite o nome do usuário e descubra suas contribuições!</p>
-      <form>
+      <form [formGroup]="searchUsername" (ngSubmit)="onSubmit()">
         <div class="form-group">
-          <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Nome de usuário">
+          <input type="text" class="form-control" id="username" placeholder="Nome de usuário" formControlName="username">
         </div>
-        <button type="submit" class="btn btn-outline-secondary" href="#">Pesquisar</button>
+        <button type="submit" class="btn btn-outline-secondary">Pesquisar</button>
+        <!-- (click)="repositoriesService.getRepositories()" -->
       </form>
     </div>
   </div>
