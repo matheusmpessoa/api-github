@@ -2,10 +2,14 @@
 
 main {
   margin: 15px 0px;
-  min-height: calc(90vh - 70px);
+  min-height: calc(88vh - 70px);
   background-color: $grey;
 
   .list-group {
     width: 100%;
+
+    span {
+      color: $green;
+    }
   }
 }

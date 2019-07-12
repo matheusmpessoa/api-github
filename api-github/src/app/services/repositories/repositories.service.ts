@@ -9,6 +9,7 @@ import { Endpoints } from './../../../environments/endpoints';
   providedIn: 'root'
 })
 export class RepositoriesService {
+  public messageError: string;
   public userData;
 
   constructor(
@@ -17,19 +18,7 @@ export class RepositoriesService {
   ) { }
 
   getRepositories(username: string) {
-    return this.http.get<any>(Endpoints.usersURL + username + '/repos')
-      .subscribe(
-        response => {
-          if (response) {
-            // let userData = response.map(function(userData) {
-            //   console.log(userData);
-            //   return userData;
-            // });
-            console.log(response);
-            this.userData = response;
-          }
-        }
-      )
+    return this.http.get<any>(Endpoints.usersURL + username + '/repos');
   }
 
 }

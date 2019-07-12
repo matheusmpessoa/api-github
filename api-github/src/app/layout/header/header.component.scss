@@ -5,10 +5,10 @@ header {
   background-color: $white;
 
   .navbar-brand {
-    width: 60%;
+    width: 10%;
 
     img {
-      width: 10%;
+      width: 70%;
 
       @media screen and (max-width: 990px) {
         width: 30%;
@@ -16,7 +16,11 @@ header {
     }
   }
 
-  .collapse {
+  .navbar-collapse {
+    .nav-link {
+      color: $green;
+    }
+
     .link-navbar {
       padding: 10px;
     }

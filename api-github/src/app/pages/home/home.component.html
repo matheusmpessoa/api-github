@@ -1,9 +1,10 @@
 <main>
   <div class="container ">
     <div class="col-md-6 p-lg-5 mx-auto text-center">
-      <h2>API Github</h2>
+      <h2>Descobridor de repositórios <i class="fa fa-search fa-fw"></i></h2>
       <p>Digite o nome do usuário e descubra suas contribuições!</p>
-      <form [formGroup]="searchUsername" (ngSubmit)="onSubmit()">
+
+      <form [formGroup]="searchUsernameForm" (ngSubmit)="onSubmit()">
         <div class="form-group">
           <input type="text" class="form-control" id="username" placeholder="Nome de usuário"
             formControlName="username">
@@ -12,24 +13,26 @@
       </form>
     </div>
 
-    <div class="list-group" *ngIf="userSearched">
-      <h3>Repositórios de: <span>{{ userSearched }}</span></h3>
-      <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-        <div class="d-flex w-100 justify-content-between">
-          <h5>Cabeçalho do item</h5>
-          <small>3 dias atrás</small>
+    <div *ngIf="userSearched">
+      <div class="list-group">
+        <h3>Repositórios de: <span>{{ userSearched }}</span></h3>
+        <div *ngFor="let repo of responseObj">
+          <a href="{{ repo.html_url }}" class="list-group-item list-group-item-action flex-column align-items-start" target="_blank">
+            <div class="d-flex w-100 justify-content-between">
+              <h5>{{ repo.name }}</h5>
+              <small>{{ repo.stargazers_count }} <i class="fa fa-star fa-1x"></i></small>
+            </div>
+            <p>{{ repo.description }}</p>
+            <small>Linguagem principal: {{ repo.language }}</small>
+          </a>
         </div>
-        <p>Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-        <small>Donec id elit non mi porta.</small>
-      </a>
-      <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-        <div class="d-flex w-100 justify-content-between">
-          <h5>Cabeçalho do item</h5>
-          <small class="text-muted">3 dias atrás</small>
-        </div>
-        <p>Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-        <small class="text-muted">Donec id elit non mi porta.</small>
-      </a>
+      </div>
+    </div>
+
+    <div class="col-md-6 mx-auto text-center">
+      <div class="alert alert-danger" *ngIf="messageError" role="alert">
+        {{ messageError }}
+      </div>
     </div>
   </div>
 </main>
