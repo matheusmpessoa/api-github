@@ -2,36 +2,30 @@
 
 Application to consume API Github
 
+## Informações
 
-## Informações de uso
+### Pré requisitos
 
-### Ferramentas necessárias
+* Node v+10
+* Angular CLI
 
-Node v+10 - Navegador - CLI para executar o projeto
+### Comandos para executar o projeto
 
-### Comandos necessários
+```js
+npm install -y && ng serve --open
+```
 
-Vá até a raiz do projeto e digite em seu CLI: npm install -y && ng serve --open
+### Tecnologias utilizadas
 
-Abra o navegador na url: http://localhost:4200/
+* HTML5 - CSS3 - TypeScript
+* Angular 8 - SASS - Bootstrap 4 - FontAwesome
+
+### API consumida
+
+https://developer.github.com/v3/
 
 ## Como usar
 
 ### Pesquisa
 
 Vá até a home e digite o nome do usuário a ser encontrado. Será apresentado uma lista dos repositórios criados pelo usuário.
-
-### Tecnologias utilizadas
-
-#### Linguagens
-
-HTML5 - CSS3 - JavaScript/TypeScript
-
-#### Frameworks, compiladores e bibliotecas
-
-Angular 7 - SASS - Bootstrap 4 - FontAwesome
-
-
-### API consumida
-
-https://developer.github.com/v3/
