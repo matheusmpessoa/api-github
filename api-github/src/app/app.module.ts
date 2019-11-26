@@ -1,31 +1,24 @@
 // Angular imports
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http'
 
-// Application
+// Root declarations on application
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 // Layout
-import { HeaderComponent } from './layout/header/header.component';
-import { FooterComponent } from './layout/footer/footer.component';
+import { LayoutModule } from './layout/layout.module';
 
 // Pages
 import { HomeComponent } from './pages/home/home.component';
 import { InstructionsComponent } from './pages/instructions/instructions.component';
 
-// Services
-import { RepositoriesService } from './services/repositories/repositories.service';
-
 @NgModule({
   declarations: [
     AppComponent,
-
-    HeaderComponent,
-    FooterComponent,
 
     HomeComponent,
     InstructionsComponent
@@ -33,14 +26,16 @@ import { RepositoriesService } from './services/repositories/repositories.servic
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+
+    LayoutModule
   ],
   providers: [
-    RepositoriesService
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [
+    AppComponent
+  ]
 })
 export class AppModule { }

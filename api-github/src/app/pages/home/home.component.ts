@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { RepositoriesService } from './../../services/repositories/repositories.service';
 import { FormGroup, FormBuilder } from '@angular/forms';
+import { RepositoriesService } from 'src/shared/services/general/repositories/repositories.service';
 
 @Component({
   selector: 'app-home',
@@ -11,7 +11,8 @@ export class HomeComponent implements OnInit {
   searchUsernameForm;
   public userSearched;
   public responseObj;
-public messageError;
+  public messageError;
+
   constructor(
     private formBuilder: FormBuilder,
     public repositoriesService: RepositoriesService,
