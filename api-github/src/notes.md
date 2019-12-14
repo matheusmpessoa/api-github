@@ -13,7 +13,7 @@ Services
 Ordem de declaração em arquivos .ts
  * >@angular
  * >shared
- * >
+ * >all
 
 Exemplo
 ```js
@@ -24,10 +24,16 @@ import { RepositoriesService } from 'src/shared/services/general/repositories/re
 
 Utilizar espaçador de tamanho 2 como padrão do projeto.
 
-Compilador Ivy adicionado ao projeto
+Compilador Ivy adicionado ao projeto.
 
-## Patterns
+### Services
 
+* Utilizar verbos do http (get, post, put, delete)
+* Manipular observables com 'subscribe'.
+* Não criar emit para se comunicar com componentes.
+
+## Patterns e arquitetura
+* Comunicação entre services/components/pages da aplicação
 * Dumb e smart components
 
 ## Alterações futuras
