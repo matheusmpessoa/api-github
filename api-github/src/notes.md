@@ -28,9 +28,14 @@ Compilador Ivy adicionado ao projeto
 
 ## Patterns
 
+* Dumb e smart components
 
 ## Alterações futuras
 
 Criar um CHANGELOG que siga o semantic version. Ao menos em markdown.
 
 Definir uma separação clara entre 'dumb' e 'smart' components.
+
+## Referências
+* https://angular.io/guide/architecture
+* https://itnext.io/angular-patterns-1-modules-organisation-d3b2224ec4cf
